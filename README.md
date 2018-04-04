@@ -2,7 +2,7 @@
 
 |Nome|Matrícula |
 |:--:|:--:|
-|**Lucas Kishima**||
+|**Lucas Kishima**|16/0133581|
 |**Lucas Midlhey**|13/0122254|
 |**Vinícius Borges**|15/0151225|
 
@@ -20,6 +20,10 @@ ultrapassar um determinado limiar T, a célula é dita excitada, caso
 contrário, a célula é dita inibida. Em um neurônio com um vetor de
 entrada X, os elementos individuais xi são multiplicados pelos pesos wi,
 gerando SOMAP.
+
+<p align="center"> 
+<img src="https://i.imgur.com/A3WD1mj.png">
+</p>
 
 a) Escreva um programa principal que solicita ao usuário 10 valores
 reais que são guardados em um vetor ENTRADAS e outros 10

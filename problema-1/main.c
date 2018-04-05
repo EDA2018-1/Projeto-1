@@ -4,9 +4,9 @@ void fneuronio(float *, float *, float, int, int *);
 
 int main(int argc, char const *argv[]) {
 
-  int i = 0, x, num_max = 10;
+  int i = 0, estado_neuronio, num_max = 10, *p;
   float entradas[num_max], pesos[num_max], limiar;
-  int* estado_neuronio = &x;
+  p = &estado_neuronio;
 
   printf("Digite 10 entradas: \n");
   for(i = 0; i < num_max; i++){
@@ -25,9 +25,9 @@ int main(int argc, char const *argv[]) {
   printf("Digite o limiar de excitação do neurônio: \n");
   scanf("%f", &limiar);
 
-  fneuronio(entradas, pesos, limiar , num_max, estado_neuronio);
+  fneuronio(entradas, pesos, limiar , num_max, p);
 
-  if(*estado_neuronio==1)
+  if(*p==1)
     printf("Neurônio ativado!\n");
   else
     printf("Neurônio inibido!\n");
@@ -35,16 +35,14 @@ int main(int argc, char const *argv[]) {
   return 0;
 }
 
-void fneuronio(float *n, float *m, float t, int num_max, int *estado_neuronio){
+void fneuronio(float *n, float *m, float t, int num_max, int *p){
   int i = 0;
   float somap = 0;
-  for(i=0; i < num_max; i++){
+  for(i=0; i < num_max; i++)
     somap += (*n + i) * (*m + i);
-  }
-  if(somap > t){
-    *estado_neuronio = 1;
-  }
-  else{
-    *estado_neuronio = 0;
-  }
+
+  if(somap > t)
+    *p = 1;
+  else
+    *p = 0;
 }
